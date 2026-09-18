@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Doga Digital Expert - Digital marketing, SEO, social media, branding and web solutions.">
+    <title>Doga Digital Expert | Digital Marketing Agency</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08080d;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8,8,13,0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #9b5cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c7c7d1;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #a66cff;
+        }
+
+        .nav-btn {
+            padding: 11px 20px;
+            border-radius: 30px;
+            background: linear-gradient(135deg,#8d4dff,#4c7dff);
+            color: white !important;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: #743cff;
+            filter: blur(180px);
+            opacity: .22;
+            top: 10%;
+            left: -10%;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: #1677ff;
+            filter: blur(180px);
+            opacity: .18;
+            right: -10%;
+            bottom: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid rgba(166,108,255,.35);
+            border-radius: 30px;
+            color: #b98aff;
+            background: rgba(155,92,255,.08);
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 1;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg,#a25cff,#4e8cff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: #aaaab8;
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg,#9857ff,#477eff);
+        }
+
+        .btn-secondary {
+            border: 1px solid #333340;
+            color: #ddd;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 44px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #9999a7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg,#111119,#0c0c12);
+            border: 1px solid #20202b;
+            padding: 30px;
+            border-radius: 20px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #7042b9;
+            box-shadow: 0 20px 50px rgba(100,50,200,.12);
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: rgba(142,80,255,.12);
+            color: #a76cff;
+            font-size: 25px;
+            margin-bottom: 22px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #9999a7;
+            font-size: 14px;
+        }
+
+        .stats {
+            background: #0e0e15;
+            border-top: 1px solid #1c1c26;
+            border-bottom: 1px solid #1c1c26;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 42px;
+            color: #a86cff;
+        }
+
+        .stat p {
+            color: #9999a7;
+        }
+
+        .cta {
+            text-align: center;
+            background: radial-gradient(circle at center,#1b1230,#08080d 65%);
+        }
+
+        .cta h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            padding: 50px 0 25px;
+            border-top: 1px solid #20202a;
+            background: #060609;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #888895;
+            font-size: 14px;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #1b1b22;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        @media(max-width:800px) {
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2,1fr);
+                gap: 35px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">Doga<span>Digital</span></a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="nav-btn">Let's Talk</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="badge">✦ Digital Marketing Experts</div>
+
+            <h1>
+                We Build Brands<br>
+                That <span>Get Noticed.</span>
+            </h1>
+
+            <p>
+                Doga Digital Expert helps ambitious businesses grow online
+                through powerful digital marketing, creative branding,
+                SEO and modern web solutions.
+            </p>
+
+            <div class="buttons">
+                <a href="contact.html" class="btn btn-primary">Start a Project →</a>
+                <a href="services.html" class="btn btn-secondary">Explore Services</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>What We Do</h2>
+            <p>Everything your business needs to grow digitally.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="card">
+                <div class="icon">⌕</div>
+                <h3>SEO</h3>
+                <p>
+                    Improve your search visibility and attract high-quality
+                    organic traffic to your website.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">◉</div>
+                <h3>Social Media</h3>
+                <p>
+                    Build an engaging social presence with creative content
+                    and strategic campaigns.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">↗</div>
+                <h3>Paid Advertising</h3>
+                <p>
+                    Reach the right audience with data-driven advertising
+                    campaigns designed for measurable results.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">◆</div>
+                <h3>Branding</h3>
+                <p>
+                    Create a memorable identity that makes your business
+                    recognizable and professional.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">◈</div>
+                <h3>Web Design</h3>
+                <p>
+                    Modern, responsive and conversion-focused websites
+                    designed around your business.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✦</div>
+                <h3>Content Marketing</h3>
+                <p>
+                    Strategic content that educates your audience and
+                    turns visitors into customers.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <h3>100+</h3>
+                <p>Projects</p>
+            </div>
+
+            <div class="stat">
+                <h3>50+</h3>
+                <p>Happy Clients</p>
+            </div>
+
+            <div class="stat">
+                <h3>5+</h3>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat">
+                <h3>15+</h3>
+                <p>Industries</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+
+        <h2>Ready to Grow?</h2>
+
+        <p>
+            Let's turn your digital presence into a powerful growth engine.
+        </p>
+
+        <a href="contact.html" class="btn btn-primary">
+            Work With Us →
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>Doga<span style="color:#9b5cff;">Digital</span></h3>
+                <p>
+                    Digital marketing solutions for ambitious brands
+                    ready to grow and stand out.
+                </p>
+            </div>
+
+            <div>
+                <h3>Pages</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Services</h3>
+                <a href="services.html">SEO</a>
+                <a href="services.html">Social Media</a>
+                <a href="services.html">Web Design</a>
+                <a href="services.html">Branding</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Doga Digital Expert. All Rights Reserved.
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
